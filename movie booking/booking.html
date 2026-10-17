@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Tickets | MovieBook</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>🎬 MovieBook</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="movies.html">Movies</a>
+    </nav>
+</header>
+
+<main class="booking-app">
+    <h2>Book Your Movie Ticket</h2>
+    <p class="booking-subtitle">
+        Your perfect movie experience starts here.
+    </p>
+
+    <div class="booking-progress">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <div class="step-label" id="stepLabel">Step 1 of 4</div>
+
+    <form id="bookingForm">
+
+        <!-- STEP 1: SHOW DETAILS -->
+        <section class="booking-step active">
+            <h3>Choose Your Show</h3>
+
+            <label for="movie">Movie</label>
+            <input type="text" id="movie" readonly>
+
+            <label for="theatre">Theatre</label>
+            <select id="theatre" required>
+                <option value="">Choose theatre</option>
+                <option value="City Cinemas">City Cinemas</option>
+                <option value="Galaxy Multiplex">Galaxy Multiplex</option>
+                <option value="Royal Screens">Royal Screens</option>
+            </select>
+
+            <label for="date">Date</label>
+            <input type="date" id="date" required>
+
+            <label for="time">Show Time</label>
+            <select id="time" required>
+                <option value="">Choose showtime</option>
+                <option value="10:00 AM">10:00 AM</option>
+                <option value="1:00 PM">1:00 PM</option>
+                <option value="4:00 PM">4:00 PM</option>
+                <option value="7:00 PM">7:00 PM</option>
+            </select>
+        </section>
+
+        <!-- STEP 2: SEATS -->
+        <section class="booking-step">
+            <h3>Select Your Seats</h3>
+
+            <div class="screen-display">SCREEN THIS WAY</div>
+
+            <div class="seat-legend">
+                <span>⬛ Available</span>
+                <span>🟩 Selected</span>
+            </div>
+
+            <div class="seats" id="seats"></div>
+
+            <div class="booking-summary">
+                <p>Selected seats: <strong id="seatSummary">None</strong></p>
+                <p>Total amount: <strong id="total">₹0</strong></p>
+            </div>
+        </section>
+
+        <!-- STEP 3: CUSTOMER DETAILS -->
+        <section class="booking-step">
+            <h3>Your Details</h3>
+
+            <label for="customer">Full Name</label>
+            <input type="text" id="customer"
+                   placeholder="Enter your full name" required>
+
+            <label for="phone">Mobile Number</label>
+            <input type="tel" id="phone"
+                   placeholder="10-digit mobile number"
+                   pattern="[6-9][0-9]{9}"
+                   title="Enter a valid 10-digit Indian mobile number"
+                   required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email"
+                   placeholder="Enter your email" required>
+        </section>
+
+        <!-- STEP 4: REVIEW -->
+        <section class="booking-step">
+            <h3>Review Your Booking</h3>
+            <div id="reviewDetails" class="review-details"></div>
+            <p class="demo-note">
+                This demo does not process payments or reserve seats
+                in a shared database.
+            </p>
+        </section>
+
+        <div class="booking-actions">
+            <button type="button" id="backBtn" class="secondary-btn">
+                Back
+            </button>
+
+            <button type="button" id="nextBtn" class="btn">
+                Continue
+            </button>
+
+            <button type="submit" id="confirmBtn" class="btn" hidden>
+                Confirm Booking
+            </button>
+        </div>
+
+    </form>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
+```

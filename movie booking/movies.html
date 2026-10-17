@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies - MovieBook</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>🎬 MovieBook</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="movies.html">Movies</a>
+        <a href="booking.html">Book Tickets</a>
+    </nav>
+</header>
+
+<h2 class="section-title">Now Showing</h2>
+
+<div class="movie-container">
+
+    <div class="movie-card">
+        <img src="images/The Avengers.jpg" alt="The Avengers poster">
+        <h3>Avengers</h3>
+        <p>Action | English</p>
+        <p>Duration: 2h 30m</p>
+        <button class="btn"
+                onclick="bookMovie('Avengers')">
+            Book Now
+        </button>
+    </div>
+
+    <div class="movie-card">
+        <img src="images/RRR.jpg" alt="RRR poster">
+        <h3>RRR</h3>
+        <p>Action | Telugu</p>
+        <p>Duration: 3h 2m</p>
+        <button class="btn"
+                onclick="bookMovie('RRR')">
+            Book Now
+        </button>
+    </div>
+
+    <div class="movie-card">
+        <img src="images/puspha.jpg" alt="puspha poster">
+        <h3>Pushpa 2</h3>
+        <p>Action | Telugu</p>
+        <p>Duration: 3h 15m</p>
+        <button class="btn"
+                onclick="bookMovie('Pushpa 2')">
+            Book Now
+        </button>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+```

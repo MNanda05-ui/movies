@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="booking-box" id="ticket">
+    <h2>🎟️ Booking Confirmation</h2>
+    <p>Loading booking...</p>
+</div>
+
+<script>
+const booking = JSON.parse(
+    localStorage.getItem("lastBooking") || "null"
+);
+
+const ticket = document.getElementById("ticket");
+
+if (booking) {
+    ticket.replaceChildren();
+
+    const heading = document.createElement("h2");
+    heading.textContent = "🎉 Booking Successful!";
+    ticket.appendChild(heading);
+
+    const details = [
+        ["Movie", booking.movie],
+        ["Name", booking.customer],
+        ["Date", booking.date],
+        ["Time", booking.time],
+        ["Seats", booking.seats.join(", ")],
+        ["Total", "₹" + booking.total]
+    ];
+
+    details.forEach(([label, value]) => {
+        const p = document.createElement("p");
+        p.textContent = label + ": " + value;
+        ticket.appendChild(p);
+    });
+
+    const link = document.createElement("a");
+    link.href = "movies.html";
+    link.className = "btn";
+    link.textContent = "Book Another Movie";
+    ticket.appendChild(link);
+} else {
+    ticket.textContent = "No booking found. Please book a movie first.";
+}
+</script>
+
+</body>
+</html>
